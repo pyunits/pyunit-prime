@@ -39,5 +39,6 @@ setup(
         "Operating System :: POSIX :: Linux"
     ],
     zip_safe=False,
-    ext_modules=ext_modules
+    ext_modules=ext_modules,
+    entry_points={"console_scripts": ["prime = pyunit_prime.cli:main"]}
 )

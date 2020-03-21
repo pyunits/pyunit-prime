@@ -25,7 +25,7 @@ if __name__ == '__main__':
     print(get_large_prime(150)) # 返回长度位150位的质数
 ```
 
-### 返回区间类的质数
+### 返回区间内的质数
 ```python
 from pyunit_prime import prime_range
 
