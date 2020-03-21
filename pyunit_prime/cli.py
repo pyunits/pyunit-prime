@@ -21,5 +21,9 @@ elif args.range:
     start, end = re.split('[，,.。！？!?#$%&*+:;<=>@]', args.range)
     print(prime_range(start=int(start), end=int(end)))
 
-if __name__ == '__main__':
-    pass
+
+def main(): ...
+
+
+if __name__ == "__main__":
+    main()
