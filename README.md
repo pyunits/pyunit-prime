@@ -12,7 +12,8 @@
     
     命令行：
         判断是否是质数: prime -P 13
-        寻找一个超大质数: prime -L 100
+        寻找一个超大质数：长度: prime -L 100
+        寻找一个超大质数：bit位度: prime -B 100
         返回区间内的质数: prime -R 100,500
     
     
@@ -28,10 +29,11 @@ if __name__ == '__main__':
 
 ### 寻找一个超大质数
 ```python
-from pyunit_prime import get_large_prime
+from pyunit_prime import get_large_prime_length,get_large_prime_bit_size
 
 if __name__ == '__main__':
-    print(get_large_prime(150)) # 返回长度位150位的质数
+    print(get_large_prime_length(150)) # 返回长度位150长度的质数
+    print(get_large_prime_bit_size(150)) # 返回长度位150 bit位的质数
 ```
 
 ### 返回区间内的质数
