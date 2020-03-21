@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time  : 2020/3/21 12:49
 # @Author: Jtyoui@qq.com
-from pyunit_prime import is_prime, get_large_prime, prime_range
+from pyunit_prime import is_prime, get_large_prime_length, prime_range, get_large_prime_bit_size
 import time
 
 
@@ -13,7 +13,8 @@ def rm():
 
 
 def get():
-    print(get_large_prime(150))
+    print(get_large_prime_length(150))
+    print(get_large_prime_bit_size(526))
 
 
 def rsp():
