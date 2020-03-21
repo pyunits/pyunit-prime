@@ -6,10 +6,21 @@
 from random import randrange
 import math
 
-cpdef rabin_miller(n, k=10):
+cpdef get_prime_rounds(number):
+    bit_size = number.bit_length()
+    if bit_size >= 1536:
+        return 3
+    if bit_size >= 1024:
+        return 4
+    if bit_size >= 512:
+        return 7
+    return 10
+
+cpdef is_prime(n):
     cdef s = n - 1
     cdef f = s
     cdef t = 0
+    cdef int k = get_prime_rounds(n)
     if n <= 4:
         return [False, False, True, True, False][n]
     while s % 2 == 0:
@@ -29,15 +40,15 @@ cpdef rabin_miller(n, k=10):
         return True
     return False
 
-cpdef get_large_prime(number=500, k=10):
-    cdef size = 10 ** number
-    cdef n = 10 ** (number - 1)
+cpdef get_large_prime_length(length=500):
+    cdef size = 10 ** length
+    cdef n = 10 ** (length - 1)
     while True:
         num = randrange(n, size)
-        if rabin_miller(num, k):
+        if is_prime(num):
             return num
 
-cpdef prime_range(start, end, k=10):
+cpdef prime_range(start, end):
     cdef sieve = [True] * end
     cdef primes = []
     sieve[0] = False
@@ -54,3 +65,11 @@ cpdef prime_range(start, end, k=10):
         if sieve[i]:
             primes.append(i)
     return primes
+
+cpdef get_large_prime_bit_size(bit_size=512):
+    cdef size = 2 ** bit_size
+    cdef n = 2 ** (bit_size - 1)
+    while True:
+        num = randrange(n, size)
+        if is_prime(num):
+            return num
