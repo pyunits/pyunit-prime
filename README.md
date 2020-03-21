@@ -7,6 +7,15 @@
 ## 安装
     pip install pyunit-prime
     
+## 命令行运行:打开控制台
+    prime -h # 获取帮助
+    
+    命令行：
+        判断是否是质数: prime -P 13
+        寻找一个超大质数: prime -L 100
+        返回区间内的质数: prime -R 100,500
+    
+    
 ### 判断是否是质数
 ```python
 from pyunit_prime import is_prime
